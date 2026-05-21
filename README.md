@@ -10,7 +10,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![README (Русский)](https://img.shields.io/badge/README-Русский-red.svg)](README.ru.md)
 
-> ⚠️ **Early.** `v0.1.0` is tagged but the `// runlet:dep` grammar and CLI surface are unstable until `v1.0.0` — breaking changes between minor versions are allowed and will be called out in [CHANGELOG.md](CHANGELOG.md). Star/watch to follow.
+> ⚠️ **Experimental v0.1.0.** Tagged but not production-tested yet. The `// runlet:dep` grammar and CLI surface stay unstable until `v1.0.0` — breaking changes between minor versions are allowed and will be called out in [CHANGELOG.md](CHANGELOG.md). Star/watch to follow.
 
 ---
 
