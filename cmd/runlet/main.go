@@ -26,6 +26,7 @@ usage:
 
 flags:
     -h, --help          show this help
+    -v, --version       show build info
 
 A script declares dependencies with magic comments at the top:
 
@@ -47,6 +48,12 @@ func run(argv []string) int {
 	switch argv[0] {
 	case "-h", "--help":
 		fmt.Fprint(os.Stdout, usage)
+		return 0
+	case "-v", "--version":
+		if err := printVersion(os.Stdout); err != nil {
+			fmt.Fprintf(os.Stderr, "runlet: %v\n", err)
+			return 1
+		}
 		return 0
 	}
 

@@ -138,7 +138,7 @@ Roadmap to `v0.2.0`:
 - [x] CLI scaffold, parser, basic runner
 - [x] Cache layer (SHA-256 content-addressed, sorted-dep stable)
 - [x] Two shebang formats stripped
-- [x] First example bundle (`examples/hello-lipgloss.go`)
+- [x] First example bundle (`_examples/hello-lipgloss.go`)
 - [x] CI with `-race`, `golangci-lint`, three-OS matrix
 - [ ] [#1](https://github.com/goncharovart/runlet/issues/1) `runlet cache info` / `runlet cache clear`
 - [ ] [#2](https://github.com/goncharovart/runlet/issues/2) Multi-file scripts (`runlet ./scripts/`)

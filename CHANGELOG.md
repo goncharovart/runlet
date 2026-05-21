@@ -14,6 +14,23 @@ series are allowed but will be called out under "Changed".
 Pending milestones live in the [GitHub issues](https://github.com/goncharovart/runlet/issues)
 labelled `good first issue`.
 
+### Added
+
+- **`runlet --version` / `-v`** (closes [#3](https://github.com/goncharovart/runlet/issues/3)):
+  prints a one-line build summary derived from `runtime/debug.ReadBuildInfo()`
+  — main module version, short VCS revision (12 chars + `-dirty` flag when
+  the workspace was modified), VCS build time, and Go toolchain version.
+  Falls back to `runlet (devel) · go1.X.Y` cleanly during `go run` development.
+
+### Changed
+
+- **`examples/` → `_examples/`**: the underscore prefix tells `go vet ./...`
+  and `go test ./...` to skip the directory, which is required because
+  example scripts import third-party packages that are not (and should not
+  be) in runlet's own `go.mod`. `runlet _examples/hello-lipgloss.go`
+  still works — runlet does not care about Go's directory conventions
+  when it takes a file path.
+
 ## [v0.1.0] — 2026-05-21
 
 First tagged release. The CLI, parser, runner, and content-addressed
@@ -45,7 +62,7 @@ command."
   real code from callers. runlet builds to a cached binary and
   execs it directly, so `runlet myscript.go && echo ok` works the
   way you'd expect.
-- **Examples** — `examples/hello-lipgloss.go` drives the value prop
+- **Examples** — `_examples/hello-lipgloss.go` drives the value prop
   in 12 lines.
 
 ### Tests

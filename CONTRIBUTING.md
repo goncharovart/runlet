@@ -1,7 +1,7 @@
 # Contributing to runlet
 
 Thanks for considering a contribution. Bug reports, small feature
-PRs, and additional `examples/` scripts are all welcome.
+PRs, and additional `_examples/` scripts are all welcome.
 
 ## Quick orientation
 
@@ -12,7 +12,7 @@ The codebase is intentionally tiny:
 | `cmd/runlet/main.go` | CLI entry point — open file (or stdin), call parser → runner |
 | `internal/parser/` | Magic-comment grammar; shebang stripping; malformed-comment detection |
 | `internal/runner/` | Content-addressed cache, synthesised `go.mod`, `go build` + exec |
-| `examples/` | Short scripts that double as integration smoke-tests for new contributors |
+| `_examples/` | Short scripts that double as integration smoke-tests for new contributors. Underscore prefix tells `go vet ./...` and `go test ./...` to skip the dir — important because example scripts import third-party packages that are not in runlet's own `go.mod`. |
 
 There are no third-party Go dependencies in runlet itself — only
 stdlib. That is a deliberate choice (every dep is a future supply-chain
@@ -57,7 +57,7 @@ breaking changes require a major bump (`v0.2.0` resets the contract,
 
 ## Adding an example
 
-`examples/` doubles as integration smoke-tests for newcomers. To
+`_examples/` doubles as integration smoke-tests for newcomers. To
 add one:
 
 1. Single `.go` file with `// runlet:dep` declarations.
