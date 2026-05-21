@@ -9,8 +9,7 @@
 [![Release](https://img.shields.io/github/v/release/goncharovart/runlet?sort=semver&display_name=tag&color=blue)](https://github.com/goncharovart/runlet/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-> ⚠️ **Pre-release.** API and the `// runlet:dep` comment syntax may
-> shift before `v0.1.0`. Star/watch to follow.
+> ⚠️ **Early.** `v0.1.0` is tagged but the `// runlet:dep` grammar and CLI surface are unstable until `v1.0.0` — breaking changes between minor versions are allowed and will be called out in [CHANGELOG.md](CHANGELOG.md). Star/watch to follow.
 
 ---
 
@@ -130,18 +129,25 @@ dep list, so:
 
 ## Status
 
-This is a young project. The roadmap to `v0.1.0`:
+`v0.1.0` is shipped. Inside the box: CLI, parser, runner with
+content-addressed cache, two shebang formats, an example script, and
+a Go-1.22+1.25 × ubuntu/macOS/windows CI matrix.
 
-- [ ] CLI scaffold, parser, basic runner
-- [ ] Cache layer
-- [ ] Shebang stripping
-- [ ] `runlet cache clear` / `runlet cache info`
-- [ ] Multi-file scripts (`runlet ./scripts/`)
-- [ ] First example bundle
-- [ ] CI with `-race` and `golangci-lint`
+Roadmap to `v0.2.0`:
+
+- [x] CLI scaffold, parser, basic runner
+- [x] Cache layer (SHA-256 content-addressed, sorted-dep stable)
+- [x] Two shebang formats stripped
+- [x] First example bundle (`examples/hello-lipgloss.go`)
+- [x] CI with `-race`, `golangci-lint`, three-OS matrix
+- [ ] [#1](https://github.com/goncharovart/runlet/issues/1) `runlet cache info` / `runlet cache clear`
+- [ ] [#2](https://github.com/goncharovart/runlet/issues/2) Multi-file scripts (`runlet ./scripts/`)
+- [ ] [#3](https://github.com/goncharovart/runlet/issues/3) `runlet --version` via `debug.ReadBuildInfo`
+- [ ] [#4](https://github.com/goncharovart/runlet/issues/4) Pre-run trust signal on `runlet:dep` modules
+- [ ] [#5](https://github.com/goncharovart/runlet/issues/5) Homebrew tap + apt repo distribution
 
 Open an issue or a discussion — design feedback on the magic-comment
-grammar is especially welcome before `v0.1.0` ships.
+grammar is especially welcome before `v1.0.0` freezes it.
 
 ## License
 
