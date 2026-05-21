@@ -6,6 +6,7 @@
 [![Go Reference](https://pkg.go.dev/badge/github.com/goncharovart/runlet.svg)](https://pkg.go.dev/github.com/goncharovart/runlet)
 [![Go Report Card](https://goreportcard.com/badge/github.com/goncharovart/runlet)](https://goreportcard.com/report/github.com/goncharovart/runlet)
 [![CI](https://github.com/goncharovart/runlet/actions/workflows/ci.yml/badge.svg)](https://github.com/goncharovart/runlet/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/goncharovart/runlet?sort=semver&display_name=tag&color=blue)](https://github.com/goncharovart/runlet/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 > ⚠️ **Pre-release.** API and the `// runlet:dep` comment syntax may
