@@ -22,7 +22,9 @@ const usage = `runlet — run a Go script with inline dependencies
 
 usage:
     runlet [flags] <script.go> [args...]
-    runlet -            # read script from stdin
+    runlet -                   # read script from stdin
+    runlet cache info          # show cache size + script count
+    runlet cache clear [--yes] # wipe the cache directory
 
 flags:
     -h, --help          show this help
@@ -55,6 +57,8 @@ func run(argv []string) int {
 			return 1
 		}
 		return 0
+	case "cache":
+		return runCache(argv[1:], os.Stdin, os.Stdout, os.Stderr)
 	}
 
 	scriptPath := argv[0]
