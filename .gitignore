@@ -1,0 +1,26 @@
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+coverage.html
+coverage.txt
+go.work
+go.work.sum
+vendor/
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+.env
+.env.local
+.envrc
+data/
+bin/
+dist/
+
+# Local scratch / work-in-progress files that should never reach origin
+.stash/

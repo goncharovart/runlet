@@ -1,0 +1,44 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: test (Go 1.${{ matrix.go-minor }}, ${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        go-minor: ['22', '25']
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.${{ matrix.go-minor }}'
+          cache: true
+      - name: go vet
+        run: go vet ./...
+      - name: go test
+        run: go test -race -coverprofile=coverage.out -covermode=atomic ./...
+
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.25'
+          cache: true
+      - uses: golangci/golangci-lint-action@v6
+        with:
+          version: latest
+          args: --timeout=5m
