@@ -8,6 +8,7 @@
 [![CI](https://github.com/goncharovart/runlet/actions/workflows/ci.yml/badge.svg)](https://github.com/goncharovart/runlet/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/goncharovart/runlet?sort=semver&display_name=tag&color=blue)](https://github.com/goncharovart/runlet/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![README (Русский)](https://img.shields.io/badge/README-Русский-red.svg)](README.ru.md)
 
 > ⚠️ **Early.** `v0.1.0` is tagged but the `// runlet:dep` grammar and CLI surface are unstable until `v1.0.0` — breaking changes between minor versions are allowed and will be called out in [CHANGELOG.md](CHANGELOG.md). Star/watch to follow.
 
