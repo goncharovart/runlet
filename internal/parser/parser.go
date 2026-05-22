@@ -7,7 +7,7 @@
 // declare third-party dependencies. Anything else is left for the Go
 // toolchain to handle. A separator-less shebang trick on the first
 // line is also recognised and stripped so the file remains parseable
-// by `go run` and `go fmt`.
+// by `go run` and `go fmt` after the shebang line is gone.
 package parser
 
 import (
